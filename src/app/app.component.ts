@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Workout } from './model/workout.model';
+import { Http } from '@angular/http';
+import { WorkoutService } from './workout.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sample-app';
+  title = 'Workout Tracker';
+  workouts: Array<Workout> = []
+
+  constructor(private http: Http, private workoutService: WorkoutService) {
+
+  }
+
+  ngOnInit() {
+
+    this.workoutService.getJSON()
+      .then(data => {
+        console.log(data)
+        this.workouts = data
+      })
+
+  }
+
 }

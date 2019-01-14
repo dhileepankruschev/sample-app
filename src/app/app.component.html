@@ -1,9 +1,25 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    {{ title }}
   </h1>
 </div>
 
-<app-badge count=1></app-badge>
+<div>
+  <!--<app-badge count=1></app-badge>-->
 
+  <div class="row" style="padding: 10px">
+    <div class="input-group mb-3">
+      <div style="font-size: 30px;font-weight: bold" class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Search Workout</span>
+      </div>
+      <input style="width: 50%" type="text" #search (keyup)="0" class="form-control" placeholder="Enter a workout to search" aria-label="Username"
+        aria-describedby="basic-addon1">
+    </div>
+
+  </div>
+
+  <div class="row">
+    <app-workout *ngFor="let workout of workouts | search:search.value" summary={{workout.summary}}></app-workout>
+  </div>
+</div>
