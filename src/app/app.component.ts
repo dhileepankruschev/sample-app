@@ -18,7 +18,7 @@ export class AppComponent {
 
   ngOnInit() {
 
-    this.workoutService.getJSON()
+    this.workoutService.fetchAllCourses()
       .then(data => {
         console.log(data)
         this.workouts = data
