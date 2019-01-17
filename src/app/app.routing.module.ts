@@ -6,7 +6,7 @@ import { CategoryComponent } from './category.component';
 const routes: Routes = [
     { path: "", redirectTo: "viewall", pathMatch: "full" },
     { path: 'viewall', component: WorkoutComponent },
-    { path: 'viewall', component: CategoryComponent }
+    { path: 'category', component: CategoryComponent }
 ];
 
 @NgModule({
