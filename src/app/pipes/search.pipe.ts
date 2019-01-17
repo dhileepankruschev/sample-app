@@ -8,7 +8,7 @@ export class SearchPipe implements PipeTransform {
 
   transform(workouts: Array<Workout>, name: string) {
 
-    return workouts.filter(workout => workout.summary.toLowerCase().includes(name.toLowerCase()))
+    return workouts.filter(workout => workout.title.toLowerCase().includes(name.toLowerCase()))
   }
 
 }

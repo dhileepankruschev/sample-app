@@ -5,6 +5,7 @@
   </h1>
 </div>
 
+<app-header></app-header>
 <div>
   <!--<app-badge count=1></app-badge>-->
 
@@ -20,6 +21,8 @@
   </div>
 
   <div class="row">
-    <app-workout *ngFor="let workout of workouts | search:search.value" summary={{workout.summary}}></app-workout>
+    <app-workout *ngFor="let workout of workouts | search:search.value" summary={{workout.title}}></app-workout>
   </div>
+
+  <router-outlet></router-outlet>
 </div>

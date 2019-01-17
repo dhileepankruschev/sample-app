@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Workout } from './model/workout.model';
+import { WorkoutService } from './workout.service';
+import { Http } from '@angular/http';
 
 @Component({
     selector: 'app-workout',
