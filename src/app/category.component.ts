@@ -26,10 +26,11 @@ export class CategoryComponent implements OnInit {
 
         this.workoutService.addCategory(this.cat)
             .then(data => {
-                console.log('Category ' + data)
+                console.log('Category ' + data);
+                this.fetchAllCategories();
             })
 
-        this.fetchAllCategories();
+        
 
         //this.router.navigate(['category']);
     }
