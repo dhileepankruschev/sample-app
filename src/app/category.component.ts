@@ -16,12 +16,7 @@ export class CategoryComponent implements OnInit {
 
     ngOnInit() {
 
-        this.workoutService.fetchAllCategories()
-            .then(data => {
-                console.log(data)
-                this.categories = data
-            })
-
+        this.fetchAllCategories();
     }
 
     addCategory(categoryStr: string) {
@@ -31,10 +26,19 @@ export class CategoryComponent implements OnInit {
 
         this.workoutService.addCategory(this.cat)
             .then(data => {
-                console.log(data)
+                console.log('Category ' + data)
             })
 
-        this.router.navigate(['category']);
+        this.fetchAllCategories();
+
+        //this.router.navigate(['category']);
     }
 
+    fetchAllCategories() {
+        this.workoutService.fetchAllCategories()
+            .then(data => {
+                console.log('fetch all ' + data)
+                this.categories = data
+            })
+    }
 }
