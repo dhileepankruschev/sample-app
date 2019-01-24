@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from './model/category.model';
 import { WorkoutService } from './workout.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-category',
@@ -9,10 +10,17 @@ import { WorkoutService } from './workout.service';
 export class CategoryComponent implements OnInit {
 
     cat: Category = new Category();
+    categories: Array<Category> = []
 
-    constructor(private workoutService: WorkoutService) { }
+    constructor(private workoutService: WorkoutService, private router: Router) { }
 
     ngOnInit() {
+
+        this.workoutService.fetchAllCategories()
+            .then(data => {
+                console.log(data)
+                this.categories = data
+            })
 
     }
 
@@ -25,6 +33,8 @@ export class CategoryComponent implements OnInit {
             .then(data => {
                 console.log(data)
             })
+
+        this.router.navigate(['category']);
     }
 
 }

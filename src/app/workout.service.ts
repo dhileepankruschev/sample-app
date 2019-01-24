@@ -45,4 +45,10 @@ export class WorkoutService {
       .then(res => "Category " + category.category + " added successfully")
   }
 
+  fetchAllCategories(): Promise<any> {
+    return this.http.get("http://localhost:8080/category/fetchall")
+      .toPromise()
+      .then(res => res.json())
+  }
+
 }

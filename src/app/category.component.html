@@ -1,8 +1,26 @@
-<h3 style="padding-top: 10px; padding-left: 10px">
-    Add Category
-</h3>
-<div>
-    <input style="width: 50%; margin: 10px" type="text" #category (keyup)="0" class="form-control" placeholder="Enter a category to add"
-        aria-label="Category" aria-describedby="basic-addon1">
-        <input type="button" value="Add" style="margin: 10px" (click)="addCategory(category.value)">
+<div class="row" style="padding: 10px">
+    <div class="input-group mb-3">
+        <div style="font-size: 20px;font-weight: bold" class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Search Category</span>
+        </div>
+        <br>
+        <input style="width: 50%" type="text" #search (keyup)="0" class="form-control" placeholder="Enter a workout to search" aria-label="Username"
+            aria-describedby="basic-addon1">
+    </div>
+</div>
+
+<div class="row" style="padding: 10px">
+    <div class="input-group mb-3">
+        <div style="font-size: 20px;font-weight: bold" class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Add Category</span>
+        </div>
+        <input style="width: 50%" type="text" #category (keyup)="0" class="form-control" placeholder="Enter a category to add"
+            aria-label="Category" aria-describedby="basic-addon1">
+            <input type="button" value="Add" style="margin: 10px" (click)="addCategory(category.value)">
+
+    </div>
+</div>
+
+<div class="row">
+    <app-category-view *ngFor="let scategory of categories | catsearch:search.value" categoryname={{scategory.category}}></app-category-view>
 </div>

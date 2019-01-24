@@ -6,10 +6,10 @@
 </div>
 
 <app-header></app-header>
-<div>
+<div class="container">
   <!--<app-badge count=1></app-badge>-->
 
-  <div class="row" style="padding: 10px">
+  <!--<div class="row" style="padding: 10px">
     <div class="input-group mb-3">
       <div style="font-size: 30px;font-weight: bold" class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Search Workout</span>
@@ -22,7 +22,7 @@
 
   <div class="row">
     <app-workout *ngFor="let workout of workouts | search:search.value" summary={{workout.title}}></app-workout>
-  </div>
+  </div>-->
 
   <router-outlet></router-outlet>
 </div>

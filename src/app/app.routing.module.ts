@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { WorkoutComponent } from './workout.component';
+import { ViewWorkoutComponent } from './viewall.component';
 import { CategoryComponent } from './category.component';
 
 const routes: Routes = [
     { path: "", redirectTo: "viewall", pathMatch: "full" },
-    { path: 'viewall', component: WorkoutComponent },
+    { path: 'viewall', component: ViewWorkoutComponent },
     { path: 'category', component: CategoryComponent }
 ];
 

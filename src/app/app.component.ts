@@ -18,11 +18,11 @@ export class AppComponent {
 
   ngOnInit() {
 
-    this.workoutService.fetchAllCourses()
+    /*this.workoutService.fetchAllCourses()
       .then(data => {
         console.log(data)
         this.workouts = data
-      })
+      })*/
 
   }
 
