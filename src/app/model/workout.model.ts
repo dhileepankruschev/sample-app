@@ -1,6 +1,14 @@
+import { Category } from './category.model';
+
 export class Workout {
 
-    constructor(public id: number, public title: string, public note: string, public calories: number, public categoryid: number) {
+    public id: number;
+    public title: string;
+    public note: string;
+    public calories: number;
+    public category: Category;
+
+    constructor() {
 
     }
 

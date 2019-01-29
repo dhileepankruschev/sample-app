@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
 import { Category } from './model/category.model';
+import { Workout } from './model/workout.model';
 import { HttpHeaders } from '@angular/common/http';
 
 const httpOptions = {
@@ -35,6 +36,13 @@ export class WorkoutService {
     return this.http.get("http://localhost:8080/workout/fetchall")
       .toPromise()
       .then(res => res.json())
+  }
+
+  addWorkout(workout: Workout): Promise<any> {
+    console.log(workout.calories, workout.category, workout.id, workout.note, workout.title)
+    return this.http.post("http://localhost:8080/workout/save", workout)
+      .toPromise()
+      .then(res => "Workout " + workout.title + " added successfully")
   }
 
   addCategory(category: Category): Promise<any> {

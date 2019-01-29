@@ -1,0 +1,37 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Add Workout
+  </h1>
+</div>
+<br>
+<table style="width: 50%">
+  <tr>
+    <td style="width: 50%"><b style="padding-left: 30px">Title:</b></td>
+    <td style="width: 50%"><input type="text" #title></td>
+  </tr>
+  <br>
+  <tr>
+    <td style="width: 50%"><b style="padding-left: 30px">Note:</b></td>
+    <td style="width: 50%"><textarea name="note" style="width: 75%; height: 75px" #note></textarea></td>
+  </tr>
+  <br>
+  <tr>
+    <td style="width: 50%"><b style="padding-left: 30px">Calories burnt per min:</b></td>
+    <td style="width: 50%"><input type="text" #calories></td>
+  </tr>
+  <br>
+  <tr>
+    <td style="width: 50%"><b style="padding-left: 30px">Category:</b></td>
+    <td style="width: 50%">
+      <select class='select-option' [(ngModel)]='optionSelected' (ngModelChange)='onOptionSelected($event)'>
+        <option class='option' *ngFor='let category of categories' [value]="category.id">{{category.category}}</option>
+      </select>
+    </td>
+  </tr>
+  <br>
+  <tr>
+    <td></td>
+    <td style="width: 50%"><input type="button" value="Add Workout" (click)="createworkout(title.value, note.value, calories.value)"></td>
+  </tr>
+</table>
